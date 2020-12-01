@@ -129,7 +129,7 @@
 
     {{- /* 019: 微博 */ -}}
     {{- if $share.Weibo -}}
-        <a href="javascript:void(0);" title="{{ T `shareOn` }} 微博" data-sharer="weibo" data-url="{{ .Permalink }}" data-title="{{ .Title }}"{{ with .Params.featuredImage }} data-image="{{ . }}"{{ end }}{{ with .Site.Params.Social.Weibo }} data-ralateuid="{{ . }}"{{ end }}>
+        <a href="javascript:void(0);" title="{{ T `shareOn` }} Weibo" data-sharer="weibo" data-url="{{ .Permalink }}" data-title="{{ .Title }}"{{ with .Params.featuredImage }} data-image="{{ . }}"{{ end }}{{ with .Site.Params.Social.Weibo }} data-ralateuid="{{ . }}"{{ end }}>
             {{- dict "Class" "fab fa-weibo fa-fw" | partial "plugin/icon.html" -}}
         </a>
     {{- end -}}
