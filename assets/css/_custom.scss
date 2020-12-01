@@ -1,0 +1,23 @@
+// ==============================
+// Custom style
+// 自定义样式
+// ==============================
+
+#qrcode-img {
+    position: absolute;
+    transform: translate(calc(-100% + 1em), calc(-100% - 1em));
+    opacity: 0;
+    transition: opacity 0.5;
+    img {
+        display: none;
+    }
+}
+.qrcode-container {
+    &:hover #qrcode-img {
+        opacity: 1;
+        img {
+            display: inline-block;
+            border: 1px solid var(--color-contrast-lower);
+        }
+    }
+}

@@ -1,0 +1,241 @@
+{{- $share := (.Scratch.Get "params").share | default dict -}}
+
+{{- if $share.enable -}}
+    {{- /* 001: Twitter */ -}}
+    {{- if $share.Twitter -}}
+        <a href="javascript:void(0);" title="{{ T `shareOn` }} Twitter" data-sharer="twitter" data-url="{{ .Permalink }}" data-title="{{ .Title }}"{{ with .Site.Params.Social.Twitter }} data-via="{{ . }}"{{ end }}{{ with .Params.tags }} data-hashtags="{{ delimit . `,` }}"{{ end }}>
+            {{- dict "Class" "fab fa-twitter fa-fw" | partial "plugin/icon.html" -}}
+        </a>
+    {{- end -}}
+
+    {{- /* 002: Facebook */ -}}
+    {{- if $share.Facebook -}}
+        <a href="javascript:void(0);" title="{{ T `shareOn` }} Facebook" data-sharer="facebook" data-url="{{ .Permalink }}"{{ with .Params.tags }} data-hashtag="{{ index . 0 }}"{{ end }}>
+            {{- dict "Class" "fab fa-facebook-square fa-fw" | partial "plugin/icon.html" -}}
+        </a>
+    {{- end -}}
+
+    {{- /* 003: Linkedin */ -}}
+    {{- if $share.Linkedin -}}
+        <a href="javascript:void(0);" title="{{ T `shareOn` }} Linkedin" data-sharer="linkedin" data-url="{{ .Permalink }}">
+            {{- dict "Class" "fab fa-linkedin fa-fw" | partial "plugin/icon.html" -}}
+        </a>
+    {{- end -}}
+
+    {{- /* 004: WhatsApp */ -}}
+    {{- if $share.Whatsapp -}}
+        <a href="javascript:void(0);" title="{{ T `shareOn` }} WhatsApp" data-sharer="whatsapp" data-url="{{ .Permalink }}" data-title="{{ .Title }}" data-web>
+            {{- dict "Class" "fab fa-whatsapp fa-fw" | partial "plugin/icon.html" -}}
+        </a>
+    {{- end -}}
+
+    {{- /* 005: Viber */ -}}
+    {{- if $share.Viber -}}
+        <a href="javascript:void(0);" title="{{ T `shareOn` }} Viber" data-sharer="viber" data-url="{{ .Permalink }}" data-title="{{ .Title }}">
+            {{- dict "Class" "fab fa-viber fa-fw" | partial "plugin/icon.html" -}}
+        </a>
+    {{- end -}}
+
+    {{- /* 006: Pinterest */ -}}
+    {{- if $share.Pinterest -}}
+        <a href="javascript:void(0);" title="{{ T `shareOn` }} Pinterest" data-sharer="pinterest" data-url="{{ .Permalink }}"{{ with .Description }} data-description="{{ . }}"{{ end }}{{ with .Params.featuredImage }} data-image="{{ . }}"{{ end }}>
+            {{- dict "Class" "fab fa-pinterest fa-fw" | partial "plugin/icon.html" -}}
+        </a>
+    {{- end -}}
+
+    {{- /* 007: Tumblr */ -}}
+    {{- if $share.Tumblr -}}
+        <a href="javascript:void(0);" title="{{ T `shareOn` }} Tumblr" data-sharer="tumblr" data-url="{{ .Permalink }}" data-title="{{ .Title }}"{{ with .Description }} data-caption="{{ . }}"{{ end }}{{ with .Params.tags }} data-tags="{{ delimit . `,` }}"{{ end }}>
+            {{- dict "Class" "fab fa-tumblr fa-fw" | partial "plugin/icon.html" -}}
+        </a>
+    {{- end -}}
+
+    {{- /* 008: Hacker News */ -}}
+    {{- if $share.Hackernews -}}
+        <a href="javascript:void(0);" title="{{ T `shareOn` }} Hacker News" data-sharer="hackernews" data-url="{{ .Permalink }}" data-title="{{ .Title }}">
+            {{- dict "Class" "fab fa-hacker-news fa-fw" | partial "plugin/icon.html" -}}
+        </a>
+    {{- end -}}
+
+    {{- /* 009: Reddit */ -}}
+    {{- if $share.Reddit -}}
+        <a href="javascript:void(0);" title="{{ T `shareOn` }} Reddit" data-sharer="reddit" data-url="{{ .Permalink }}">
+            {{- dict "Class" "fab fa-reddit fa-fw" | partial "plugin/icon.html" -}}
+        </a>
+    {{- end -}}
+
+    {{- /* 010: VK */ -}}
+    {{- if $share.VK -}}
+        <a href="javascript:void(0);" title="{{ T `shareOn` }} VK" data-sharer="vk" data-url="{{ .Permalink }}" data-title="{{ .Title }}"{{ with .Description }} data-caption="{{ . }}"{{ end }}{{ with .Params.featuredImage }} data-image="{{ . }}"{{ end }}>
+            {{- dict "Class" "fab fa-vk fa-fw" | partial "plugin/icon.html" -}}
+        </a>
+    {{- end -}}
+
+    {{- /* 011: Buffer */ -}}
+    {{- if $share.Buffer -}}
+        <a href="javascript:void(0);" title="{{ T `shareOn` }} Buffer" data-sharer="buffer" data-url="{{ .Permalink }}" data-title="{{ .Title }}"{{ with .Site.Params.Social.Twitter }} data-via="{{ . }}"{{ end }}{{ with .Params.featuredImage }} data-picture="{{ . }}"{{ end }}>
+            {{- dict "Class" "fab fa-buffer fa-fw" | partial "plugin/icon.html" -}}
+        </a>
+    {{- end -}}
+
+    {{- /* 012: Xing */ -}}
+    {{- if $share.Xing -}}
+        <a href="javascript:void(0);" title="{{ T `shareOn` }} Xing" data-sharer="xing" data-url="{{ .Permalink }}" data-title="{{ .Title }}">
+            {{- dict "Class" "fab fa-xing fa-fw" | partial "plugin/icon.html" -}}
+        </a>
+    {{- end -}}
+
+    {{- /* 013: Line */ -}}
+    {{- if $share.Line -}}
+        <a href="javascript:void(0);" title="{{ T `shareOn` }} Line" data-sharer="line" data-url="{{ .Permalink }}" data-title="{{ .Title }}">
+            {{- dict "Simpleicons" "line" "Prefix" (.Scratch.Get "cdn" | default dict).simpleIconsPrefix | partial "plugin/icon.html" -}}
+        </a>
+    {{- end -}}
+
+    {{- /* 014: Instapaper */ -}}
+    {{- if $share.Instapaper -}}
+        <a href="javascript:void(0);" title="{{ T `shareOn` }} Instapaper" data-sharer="instapaper" data-url="{{ .Permalink }}" data-title="{{ .Title }}" data-description="{{ .Description }}">
+            {{- dict "Simpleicons" "instapaper" "Prefix" (.Scratch.Get "cdn" | default dict).simpleIconsPrefix | partial "plugin/icon.html" -}}
+        </a>
+    {{- end -}}
+
+    {{- /* 015: Pocket */ -}}
+    {{- if $share.Pocket -}}
+        <a href="javascript:void(0);" title="{{ T `shareOn` }} Pocket" data-sharer="pocket" data-url="{{ .Permalink }}">
+            {{- dict "Class" "fab fa-get-pocket fa-fw" | partial "plugin/icon.html" -}}
+        </a>
+    {{- end -}}
+
+    {{- /* 016: Digg */ -}}
+    {{- if $share.Digg -}}
+        <a href="javascript:void(0);" title="{{ T `shareOn` }} Digg" data-sharer="digg" data-url="{{ .Permalink }}">
+            {{- dict "Class" "fab fa-digg fa-fw" | partial "plugin/icon.html" -}}
+        </a>
+    {{- end -}}
+
+    {{- /* 017: StumbleUpon */ -}}
+    {{- if $share.Stumbleupon -}}
+        <a href="javascript:void(0);" title="{{ T `shareOn` }} StumbleUpon" data-sharer="stumbleupon" data-url="{{ .Permalink }}" data-title="{{ .Title }}">
+            {{- dict "Class" "fab fa-stumbleupon fa-fw" | partial "plugin/icon.html" -}}
+        </a>
+    {{- end -}}
+
+    {{- /* 018: Flipboard */ -}}
+    {{- if $share.Flipboard -}}
+        <a href="javascript:void(0);" title="{{ T `shareOn` }} Flipboard" data-sharer="flipboard" data-url="{{ .Permalink }}" data-title="{{ .Title }}">
+            {{- dict "Class" "fab fa-flipboard fa-fw" | partial "plugin/icon.html" -}}
+        </a>
+    {{- end -}}
+
+    {{- /* 019: 微博 */ -}}
+    {{- if $share.Weibo -}}
+        <a href="javascript:void(0);" title="{{ T `shareOn` }} 微博" data-sharer="weibo" data-url="{{ .Permalink }}" data-title="{{ .Title }}"{{ with .Params.featuredImage }} data-image="{{ . }}"{{ end }}{{ with .Site.Params.Social.Weibo }} data-ralateuid="{{ . }}"{{ end }}>
+            {{- dict "Class" "fab fa-weibo fa-fw" | partial "plugin/icon.html" -}}
+        </a>
+    {{- end -}}
+
+    {{- /* 020: 人人 */ -}}
+    {{- if $share.Renren -}}
+        <a href="javascript:void(0);" title="{{ T `shareOn` }} 人人" data-sharer="renren" data-url="{{ .Permalink }}">
+            {{- dict "Class" "fab fa-renren fa-fw" | partial "plugin/icon.html" -}}
+        </a>
+    {{- end -}}
+
+    {{- /* 021: Myspace */ -}}
+    {{- if $share.Myspace -}}
+        <a href="javascript:void(0);" title="{{ T `shareOn` }} Myspace" data-sharer="myspace" data-url="{{ .Permalink }}" data-title="{{ .Title }}" data-description="{{ .Description }}">
+            {{- dict "Simpleicons" "myspace" "Prefix" (.Scratch.Get "cdn" | default dict).simpleIconsPrefix | partial "plugin/icon.html" -}}
+        </a>
+    {{- end -}}
+
+    {{- /* 022: Blogger */ -}}
+    {{- if $share.Blogger -}}
+        <a href="javascript:void(0);" title="{{ T `shareOn` }} Blogger" data-sharer="blogger" data-url="{{ .Permalink }}" data-title="{{ .Title }}" data-description="{{ .Description }}">
+            {{- dict "Class" "fab fa-blogger fa-fw" | partial "plugin/icon.html" -}}
+        </a>
+    {{- end -}}
+
+    {{- /* 023: 百度 */ -}}
+    {{- if $share.Baidu -}}
+        <a href="javascript:void(0);" title="{{ T `shareOn` }} 百度" data-sharer="baidu" data-url="{{ .Permalink }}" data-title="{{ .Title }}">
+            {{- dict "Simpleicons" "baidu" "Prefix" (.Scratch.Get "cdn" | default dict).simpleIconsPrefix | partial "plugin/icon.html" -}}
+        </a>
+    {{- end -}}
+
+    {{- /* 024: OK.RU */ -}}
+    {{- if $share.Odnoklassniki -}}
+        <a href="javascript:void(0);" title="{{ T `shareOn` }} OK.RU" data-sharer="okru" data-url="{{ .Permalink }}" data-title="{{ .Title }}">
+            {{- dict "Class" "fab fa-odnoklassniki fa-fw" | partial "plugin/icon.html" -}}
+        </a>
+    {{- end -}}
+
+    {{- /* 025: Evernote */ -}}
+    {{- if $share.Evernote -}}
+        <a href="javascript:void(0);" title="{{ T `shareOn` }} Evernote" data-sharer="evernote" data-url="{{ .Permalink }}" data-title="{{ .Title }}">
+            {{- dict "Class" "fab fa-evernote fa-fw" | partial "plugin/icon.html" -}}
+        </a>
+    {{- end -}}
+
+    {{- /* 026: Skype */ -}}
+    {{- if $share.Skype -}}
+        <a href="javascript:void(0);" title="{{ T `shareOn` }} Skype" data-sharer="skype" data-url="{{ .Permalink }}" data-title="{{ .Title }}">
+            {{- dict "Class" "fab fa-skype fa-fw" | partial "plugin/icon.html" -}}
+        </a>
+    {{- end -}}
+
+    {{- /* 027: Trello */ -}}
+    {{- if $share.Trello -}}
+        <a href="javascript:void(0);" title="{{ T `shareOn` }} Trello" data-sharer="trello" data-url="{{ .Permalink }}" data-title="{{ .Title }}" data-description="{{ .Description }}">
+            {{- dict "Class" "fab fa-trello fa-fw" | partial "plugin/icon.html" -}}
+        </a>
+    {{- end -}}
+
+    {{- /* 028: Mix */ -}}
+    {{- if $share.Mix -}}
+        <a href="//mix.com/add?url={{ .Permalink }}&amp;description={{ .Title }}" target="_blank" title="{{ T `shareOn` }} Mix">
+            {{- dict "Class" "fab fa-mix fa-fw" | partial "plugin/icon.html" -}}
+        </a>
+    {{- end -}}
+
+    {{- /* 029: Douban */ -}}
+    {{- if $share.Douban -}}
+        <a href="javascript:void(0);" title="{{ T `shareOn` }} Douban" style="display:inline-block;" data-sharer="douban" data-url="{{ .Permalink }}"{{ with .Description }} data-description="{{ . }}"{{ end }}{{ with .Params.featuredImage }} data-image="{{ . }}"{{ end }}>
+            {{- dict "Class" "fab" | partial "plugin/icon.html" -}}
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon"><path d="M.643.92v2.412h22.714V.92H.643zm1.974 4.926v9.42h18.764v-9.42H2.617zm2.72 2.408H18.69v4.605H5.338V8.254zm1.657 7.412l-2.512.938c1.037 1.461 1.87 2.825 2.512 4.091H0v2.385h24v-2.385h-6.678c.818-1.176 1.589-2.543 2.303-4.091l-2.73-.938a29.952 29.952 0 01-2.479 5.03h-4.75c-.786-1.962-1.677-3.641-2.672-5.03Z"/></svg>
+        </a>
+    {{- end -}}
+
+    {{- /* 030: QQ */ -}}
+    {{- if $share.QQ -}}
+        <a href="javascript:void(0);" title="{{ T `shareOn` }} QQ" style="display:inline-block;" data-sharer="qq" data-url="{{ .Permalink }}"{{ with .Description }} data-description="{{ . }}"{{ end }}{{ with .Params.featuredImage }} data-image="{{ . }}"{{ end }}>
+            {{- dict "Class" "fab fa-qq fa-fw" | partial "plugin/icon.html" -}}
+        </a>
+    {{- end -}}
+
+    {{- /* 031: Qzone */ -}}
+    {{- if $share.Qzone -}}
+        <a href="javascript:void(0);" title="{{ T `shareOn` }} Qzone" style="display:inline-block;" data-sharer="qzone" data-url="{{ .Permalink }}"{{ with .Description }} data-description="{{ . }}"{{ end }}{{ with .Params.featuredImage }} data-image="{{ . }}"{{ end }}>
+            {{- dict "Class" "fab" | partial "plugin/icon.html" -}}
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon"><path d="M23.985 9.202c-.032-.099-.127-.223-.334-.258-.207-.036-7.351-1.406-7.351-1.406s-.105-.022-.198-.07c-.092-.047-.127-.167-.127-.167S12.447.956 12.349.77C12.25.583 12.104.532 12 .532c-.104 0-.251.051-.349.238-.098.186-3.626 6.531-3.626 6.531s-.035.12-.128.167c-.092.047-.197.07-.197.07S.556 8.908.348 8.943c-.208.036-.302.16-.333.258a.477.477 0 0 0 .125.449l5.362 5.49s.072.08.119.172c.016.104.005.21.005.21s-1.189 7.242-1.22 7.45.075.369.159.43c.083.062.233.106.421.013.189-.093 6.812-3.261 6.812-3.261s.098-.044.201-.061c.103-.017.201.061.201.061s6.623 3.168 6.812 3.261c.188.094.338.049.421-.013a.463.463 0 0 0 .159-.43c-.021-.14-.93-5.677-.93-5.677.876-.54 1.425-1.039 1.849-1.747-2.594.969-6.006 1.717-9.415 1.866-.915.041-2.41.097-3.473-.015-.678-.071-1.17-.144-1.243-.438-.053-.215.054-.46.545-.831a2640.5 2640.5 0 0 1 2.861-2.155c1.285-.968 3.559-2.47 3.559-2.731 0-.285-2.144-.781-4.037-.781-1.945 0-2.275.132-2.811.168-.488.034-.769.005-.804-.138-.06-.248.183-.389.588-.568.709-.314 1.86-.594 1.984-.626.194-.052 3.082-.805 5.618-.535 1.318.14 3.244.668 3.244 1.276 0 .342-1.721 1.494-3.225 2.597-1.149.843-2.217 1.561-2.217 1.688 0 .342 3.533 1.241 6.689 1.01l.003-.022c.048-.092.119-.172.119-.172l5.362-5.49a.477.477 0 0 0 .127-.449z"/></svg>
+        </a>
+    {{- end -}}
+
+    {{- /* 032: Qrcode */ -}}
+    {{- if $share.Qrcode -}}
+        <a title="{{ T `shareOn` }} Qrcode" class="qrcode-container" style="display:inline-block;">
+            {{- dict "Class" "fas fa-qrcode fa-fw" | partial "plugin/icon.html" -}}
+            <div id="qrcode-img"></div>
+        </a>
+    {{- end -}}
+{{- end -}}
+
+<script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
+
+<script>
+    var typeNumber = 0;
+    var errorCorrectionLevel = 'L';
+    var qr = qrcode(typeNumber, errorCorrectionLevel);
+    qr.addData('{{ .Permalink }}');
+    qr.make();
+    document.getElementById('qrcode-img').innerHTML = qr.createImgTag();
+</script>
