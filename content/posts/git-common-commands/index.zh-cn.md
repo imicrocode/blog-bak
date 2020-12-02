@@ -117,6 +117,10 @@ git restore .
 ```shell
 # 提交暂存区文件到仓库
 git commit -m <message>
+# 提交至上个commit
+git commit --amend
+# 提交至上个commit(包括工作区的内容)
+git commit --amend -a
 ```
 
 ### git tag
@@ -202,9 +206,18 @@ git pull
 ### git fetch
 
 ```shell
-# 拉取远程仓库的变化，但不合并
+# 取回远程主机特定分支的更新 到 本地对应的远程分支
+git fetch <remote> <branch>
+# 创建并更新本地远程分支。即创建并更新origin/当前对应分支 分支，拉取代码到origin/当前对应分支 分支上
 git fetch
+# 手动指定了要fetch的remote。在不指定分支时通常默认为master
+git fetch <remote>
 ```
+
+{{< admonition warning >}}
+* `pull`:拉取远程仓库的变化到本地远程分支，并**与**本地分支合并
+* `fetch`:拉取远程仓库的变化到本地远程分支，但**不与**本地分支合并
+{{< /admonition >}}
 
 ### git remote
 
@@ -234,3 +247,38 @@ git submodule foreach git pull
 # 合并当前commit到指定commit的记录
 git rebase -i <commit>
 ```
+
+{{< admonition title="如何选择 git rebase 或 git merge ?" >}}
+以下是2种合并方式的比较:
+* `merge`:使用简单，但每次合并时会生成一个新的合并点；`merge`操作遇到冲突的时候，当前`merge`不能继续进行下去。手动修改冲突内容后，`add`修改，`commit`就可以继续往下操作。
+* `rebase`:操作稍微复杂，会把你当前分支的 `commit`放到公共分支的最前面(靠近HEAD)；`rebase`操作遇到冲突的时候会中断`rebase`，同时会提示去解决冲突。解决冲突后，将修改add后执行`git rebase —continue`继续操作，或者`git rebase —skip`忽略冲突。
+
+一般推荐使用`rebase`，因为merge之后会有记录，然后在提交PR(Pull/Request)会很难看。
+{{< /admonition >}}
+
+{{< admonition type=tip title="关于fork了别人的仓库，如何保持同步更新?" >}}
+1. 给fork配置一个remote
+   - 使用`git remote -v`查看远程状态
+   - 添加一个将被同步给fork远程的上游仓库(源名称一般建议upstream，可修改)
+     ```shell
+     git remote add upstream <git address>
+     ```
+   - 再次通过`git remote -v`查看状态确认是否配置成功
+2. 同步至fork
+   - 从上游仓库fetch分支和提交点，传送至本地，并会被存储在一个本地分支`upstream/master`
+     ```shell
+     git fetch upstream
+     ```
+   - 切换到本地主分支
+     ```shell
+     git checkout master
+     ```
+   - 把`upstream/master`分支合并到本地`master`上，这样就完成了同步，并且不会丢掉本地修改的内容
+     ```shell
+     git rebase upstream/master
+     ```
+   - 最后一步`git push origin master`
+
+**强烈推荐**使用`rebase`，因为merge之后会有记录，然后在提交PR(Pull/Request)会很难看。
+
+{{< /admonition >}}
