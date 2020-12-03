@@ -1,0 +1,25 @@
+{{ if $.Site.Params.page.enableRelatedPosts }}
+    {{ $sectionPage := .CurrentSection }}
+    {{ $.Scratch.Delete "pages" }}
+    {{ range $.Site.RegularPages }}
+        {{ if (.InSection $sectionPage) }}
+            {{ $.Scratch.Add "pages" (slice .) }}
+        {{ end }}
+    {{ end }}
+    {{ $pages := $.Scratch.Get "pages" }}
+
+    {{ $related := .Site.RegularPages.Related . | first (.Site.Params.page.relatedPostsNumber | default 5) }}
+    {{ with $related }}
+        <div class="related-posts">
+            <h2 class="related-title">{{ i18n "relatedPosts" }}{{- dict "Class" "related-icon fas fa-plus-circle fa-fw" | partial "plugin/icon.html" -}}</h2>
+            <ul class="related-list">
+                {{ range . }}
+                    <li class="related-item">
+                        <a href="{{ .RelPermalink }}" class="related-link">{{ (dict "$" . "title" .LinkTitle).title }}</a>
+                    </li>
+                {{ end }}
+            </ul>
+        </div>
+    {{ end }}
+    
+{{ end }}

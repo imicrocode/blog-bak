@@ -550,9 +550,29 @@ ignoreErrors = ["error-remote-getjson"]
     # RSS 文章数目
     rss = 10
 
+  # 相关文章
+  [related]
+    threshold = 80
+    includeNewer = true
+    toLower = true
+    [[related.indices]]
+        name = "categories"
+        weight = 100
+    [[related.indices]]
+        name = "tags"
+        weight = 95
+    [[related.indices]]
+        name = "date"
+        weight = 10
+        pattern = "2020"
+
   # Page config
   # 文章页面配置
   [params.page]
+    # 是否开启推荐文章
+    enableRelatedPosts = true
+    # 相关文章数
+    relatedPostsNumber = 5
     # 是否是原创(全局)
     original = true
     # 是否展示版权信息(全局)
