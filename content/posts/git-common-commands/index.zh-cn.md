@@ -60,7 +60,7 @@ git config --global --list
 ```shell
 git clone <repository>
 # 递归拉取(一般用在仓库中有子模块的时候)
-git clone <repository> --recursive
+git clone --recursive <repository>
 ```
 
 ### git branch
@@ -208,7 +208,7 @@ git pull
 ```shell
 # 取回远程主机特定分支的更新 到 本地对应的远程分支
 git fetch <remote> <branch>
-# 创建并更新本地远程分支。即创建并更新origin/当前对应分支 分支，拉取代码到origin/当前对应分支 分支上
+# 创建并更新远程分支到本地远程分支。
 git fetch
 # 手动指定了要fetch的remote。在不指定分支时通常默认为master
 git fetch <remote>
@@ -251,7 +251,7 @@ git rebase -i <commit>
 {{< admonition title="如何选择 git rebase 或 git merge ?" >}}
 以下是2种合并方式的比较:
 * `merge`:使用简单，但每次合并时会生成一个新的合并点；`merge`操作遇到冲突的时候，当前`merge`不能继续进行下去。手动修改冲突内容后，`add`修改，`commit`就可以继续往下操作。
-* `rebase`:操作稍微复杂，会把你当前分支的 `commit`放到公共分支的最前面(靠近HEAD)；`rebase`操作遇到冲突的时候会中断`rebase`，同时会提示去解决冲突。解决冲突后，将修改add后执行`git rebase —continue`继续操作，或者`git rebase —skip`忽略冲突。
+* `rebase`:操作稍微复杂，会把你当前分支的 `commit`放到公共分支的最前面(靠近HEAD)；`rebase`操作遇到冲突的时候会中断`rebase`，同时会提示去解决冲突。解决冲突后，将修改add后执行`git rebase —-continue`继续操作，或者`git rebase —-skip`忽略冲突。
 
 一般推荐使用`rebase`，因为merge之后会有记录，然后在提交PR(Pull/Request)会很难看。
 {{< /admonition >}}
