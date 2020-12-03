@@ -1,0 +1,27 @@
+{{- if $.Params.displayCopyright | default $.Site.Params.page.displayPostCopyright -}}
+{{ $author := partial "plugin/author.html" . }}
+{{ $copyright := $.Params.copyright | default $.Site.Params.page.copyright }}
+<ul class="post-copyright">
+    <li class="copyright-item author">
+        {{- with $author.website -}}
+            <span class="copyright-item-text">{{ i18n "author" }}</span>{{ i18n "colon" }}<a href="{{ . }}" class="p-author h-card" target="_blank" rel="noopener">{{ $author.name }}</a>
+        {{- else -}}
+            <span class="copyright-item-text">{{ i18n "author" }}</span>{{ i18n "colon" }}<span class="p-author h-card">{{ $author.name }}</span>
+        {{- end -}}
+    </li>
+    {{ if $.Params.original | default $.Site.Params.page.original }}
+        {{ $url := urls.Parse $.Permalink }}
+        {{ $decodedPath := $url.Path }}
+        {{ $baseURLWithLangFix := (strings.TrimSuffix "/" (print `/` | absURL)) }}
+        {{ $decodedPermalink := (printf `%s%s` $baseURLWithLangFix $decodedPath) }}
+        <li class="copyright-item link"><span class="copyright-item-text">{{ i18n "link" }}</span>{{ i18n "colon" }}<a href="{{ $.RelPermalink }}" target="_blank" rel="noopener">{{ $decodedPermalink }}</a></li>
+    {{ else }}
+        {{ with $.Params.link }}
+            <li class="copyright-item link"><span class="copyright-item-text">{{ i18n "link" }}</span>{{ i18n "colon" }}<a href="{{ . }}" target="_blank" rel="noopener">{{ . }}</a></li>
+        {{ end }}
+    {{ end }}
+    {{ with $copyright }}
+        <li class="copyright-item license"><span class="copyright-item-text">{{ i18n "license" }}</span>{{ i18n "colon" }}<span>{{ safeHTML . }}</span></li>
+    {{ end }}
+</ul>
+{{ end }}

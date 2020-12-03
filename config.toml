@@ -553,6 +553,12 @@ ignoreErrors = ["error-remote-getjson"]
   # Page config
   # 文章页面配置
   [params.page]
+    # 是否是原创(全局)
+    original = true
+    # 是否展示版权信息(全局)
+    displayPostCopyright = true
+    # 版权信息（支持 HTML)
+    copyright = '<a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
     # whether to hide a page from home page
     # 是否在主页隐藏一篇文章
     hiddenFromHomePage = false

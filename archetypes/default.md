@@ -26,6 +26,10 @@ math:
   enable: false
 lightgallery: false
 license: ""
+original: true
+displayCopyright: true
+copyright: ""
+link: ""
 ---
 
 <!--more-->

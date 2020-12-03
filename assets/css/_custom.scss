@@ -21,3 +21,22 @@
         }
     }
 }
+
+.post-copyright {
+    margin: 0;
+    list-style: none;
+    margin-top: 5em !important;
+    padding: 0.5em 1em;
+    background-color: rgba(255, 145, 0, 0.1);
+    border-left: 4px solid #ff9100;
+    line-height: 2;
+}
+
+.copyright-item {
+    line-height: 1.5;
+    margin: 0.5em 0;
+}
+
+.copyright-item-text {
+    font-weight: 500;
+}

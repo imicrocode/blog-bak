@@ -1,0 +1,11 @@
+# Translations for English
+# https://gohugo.io/content-management/multilingual/#translation-of-strings
+
+[link]
+other = "Link"
+
+[colon]
+other = ": "
+
+[license]
+other = "License"

@@ -1,0 +1,12 @@
+# Translations for Simplified Chinese
+# 简体中文的翻译
+# https://gohugo.io/content-management/multilingual/#translation-of-strings
+
+[link]
+other = "链接"
+
+[colon]
+other = ": "
+
+[license]
+other = "版权"
