@@ -108,9 +108,9 @@ ignoreErrors = ["error-remote-getjson"]
       #  weight = 7
     [languages.en.params]
       # site description
-      description = "Personal Code Share Hub"
+      description = "Share and Record the path of growth."
       # site keywords
-      keywords = ["Java", "Code", "Share", "Technology", "IT"]
+      keywords = ["Programmer", "Java", "Code", "Share", "Technology", "Life", "IT"]
       # App icon config
       [languages.en.params.app]
         # optional site title override for the app when added to an iOS home screen or Android launcher
@@ -160,7 +160,7 @@ ignoreErrors = ["error-remote-getjson"]
           # title shown in home page (HTML format is supported)
           title = ""
           # subtitle shown in home page
-          subtitle = "Recording the path of technological growth."
+          subtitle = "Share and Record the path of growth"
           # whether to use typeit animation for subtitle
           typeit = true
           # whether to show social links
@@ -319,9 +319,9 @@ ignoreErrors = ["error-remote-getjson"]
       #  weight = 7
     [languages.zh-cn.params]
       # 网站描述
-      description = "个人技术代码分享"
+      description = "分享和记录成长之路。"
       # 网站关键词
-      keywords = ["Java", "代码", "分享", "技术", "IT"]
+      keywords = ["程序员", "Java", "代码", "分享", "技术", "生活", "IT"]
       # 应用图标配置
       [languages.zh-cn.params.app]
         # 当添加到 iOS 主屏幕或者 Android 启动器时的标题, 覆盖默认标题
@@ -371,7 +371,7 @@ ignoreErrors = ["error-remote-getjson"]
           # 主页显示的网站标题 (支持 HTML 格式)
           title = ""
           # 主页显示的网站副标题
-          subtitle = "记录技术成长之路"
+          subtitle = "分享和记录成长之路"
           # 是否为副标题显示打字机动画
           typeit = true
           # 是否显示社交账号
