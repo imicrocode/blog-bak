@@ -44,7 +44,7 @@ ignoreErrors = ["error-remote-getjson"]
     # [UA-XXXXXXXX-X] google analytics code
     googleAnalytics = ""
     # copyright description used only for seo schema
-    copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
+    copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License."
     # Menu config
     [languages.en.menu]
       [[languages.en.menu.main]]
@@ -254,7 +254,7 @@ ignoreErrors = ["error-remote-getjson"]
     # [UA-XXXXXXXX-X] 谷歌分析代号
     googleAnalytics = ""
     # 版权描述，仅仅用于 SEO
-    copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
+    copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License."
     # 菜单配置
     [languages.zh-cn.menu]
       [[languages.zh-cn.menu.main]]
@@ -519,10 +519,10 @@ ignoreErrors = ["error-remote-getjson"]
     since = 2020
     # ICP info only in China (HTML format is supported)
     # ICP 备案信息，仅在中国使用 (支持 HTML 格式)
-    icp = ""
+    icp = '<a rel="nofollow noopener noreferrer" href="https://beian.miit.gov.cn" target="_blank">鄂ICP备2020021584号</a>'
     # license info (HTML format is supported)
     # 许可协议信息 (支持 HTML 格式)
-    license= '<a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
+    license= '<a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>'
 
   # Section (all posts) page config
   # Section (所有文章) 页面配置
@@ -578,7 +578,7 @@ ignoreErrors = ["error-remote-getjson"]
     # 是否展示版权信息(全局)
     displayPostCopyright = true
     # 版权信息（支持 HTML)
-    copyright = '<a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
+    copyright = '<a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>'
     # whether to hide a page from home page
     # 是否在主页隐藏一篇文章
     hiddenFromHomePage = false
