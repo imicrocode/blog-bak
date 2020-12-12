@@ -23,5 +23,6 @@
     {{ with $copyright }}
         <li class="copyright-item license"><span class="copyright-item-text">{{ i18n "license" }}</span>{{ i18n "colon" }}<span>{{ safeHTML . }}</span></li>
     {{ end }}
+    <li class="copyright-item"><span>{{ i18n "copyrightDesc" }}</span></li>
 </ul>
 {{ end }}
