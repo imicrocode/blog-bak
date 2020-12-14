@@ -9,7 +9,7 @@ authorLink: ""
 description: ""
 
 tags: ['mongo']
-categories: ['工作小扎']
+categories: ['工作小札']
 
 hiddenFromHomePage: false
 hiddenFromSearch: false
@@ -86,9 +86,9 @@ Aggregation aggregation = Aggregation.newAggregation(match1, unwind, match2, lim
 AggregationResults<Document> results = mongoTemplate.aggregate(aggregation, "t_table_name", Document.class);
 ```
 
-### [Aggregation](https://docs.mongodb.com/manual/reference/operator/aggregation-pipeline/)文档
+### Aggregation
 
-数据通过条件限制传递到管道中的下一阶段，以下是本解决方案中用到的限制条件：
+数据通过条件限制传递到管道中的下一阶段，见[Aggregation](https://docs.mongodb.com/manual/reference/operator/aggregation-pipeline/)文档。以下是本解决方案中用到的限制条件：
 
 * [**$unwind**](https://docs.mongodb.com/manual/reference/operator/aggregation/unwind/):将数组中的每一个元素转为每一条文档。
 * [**$match**](https://docs.mongodb.com/manual/reference/operator/aggregation/match/):过滤文档，条件查询。
