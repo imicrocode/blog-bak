@@ -15,14 +15,14 @@
         {{ $baseURLWithLangFix := (strings.TrimSuffix "/" (print `/` | absURL)) }}
         {{ $decodedPermalink := (printf `%s%s` $baseURLWithLangFix $decodedPath) }}
         <li class="copyright-item link"><span class="copyright-item-text">{{ i18n "link" }}</span>{{ i18n "colon" }}<a href="{{ $.RelPermalink }}" target="_blank" rel="noopener">{{ $decodedPermalink }}</a></li>
+        {{ with $copyright }}
+            <li class="copyright-item license"><span class="copyright-item-text">{{ i18n "license" }}</span>{{ i18n "colon" }}<span>{{ safeHTML . }}</span></li>
+        {{ end }}
+        <li class="copyright-item"><span>{{ i18n "copyrightDesc" }}</span></li>
     {{ else }}
         {{ with $.Params.link }}
             <li class="copyright-item link"><span class="copyright-item-text">{{ i18n "link" }}</span>{{ i18n "colon" }}<a href="{{ . }}" target="_blank" rel="noopener">{{ . }}</a></li>
         {{ end }}
     {{ end }}
-    {{ with $copyright }}
-        <li class="copyright-item license"><span class="copyright-item-text">{{ i18n "license" }}</span>{{ i18n "colon" }}<span>{{ safeHTML . }}</span></li>
-    {{ end }}
-    <li class="copyright-item"><span>{{ i18n "copyrightDesc" }}</span></li>
 </ul>
 {{ end }}
