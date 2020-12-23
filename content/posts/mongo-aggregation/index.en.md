@@ -83,7 +83,7 @@ LimitOperation limit = Aggregation.limit(1);
 ProjectionOperation project = Aggregation.project("comments");
 //创建管道查询对象
 Aggregation aggregation = Aggregation.newAggregation(match1, unwind, match2, limit, project);
-AggregationResults<Document> results = mongoTemplate.aggregate(aggregation, "t_table_name", Document.class);
+AggregationResults<BasicDBObject> results = mongoTemplate.aggregate(aggregation, "t_table_name", BasicDBObject.class);
 ```
 
 ### Aggregation
