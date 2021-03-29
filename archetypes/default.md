@@ -22,6 +22,7 @@ resources:
 
 toc:
   enable: true
+  auto: false
 math:
   enable: false
 lightgallery: true
@@ -30,6 +31,8 @@ original: true
 displayCopyright: true
 copyright: ""
 link: ""
+code:
+  maxShownLines: -1
 ---
 
 <!--more-->
