@@ -35,7 +35,7 @@ code:
   maxShownLines: -1
 ---
 
-[Kafka]^(分布式事件流处理平台)
+[[Kafka]^(分布式事件流处理平台)](https://kafka.apache.org)
 
 本文将介绍kafka伪集群的搭建。
 

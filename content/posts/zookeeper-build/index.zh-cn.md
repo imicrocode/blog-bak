@@ -35,7 +35,7 @@ code:
   maxShownLines: -1
 ---
 
-[Zookeeper]^(分布式协调组件)
+[[Zookeeper]^(分布式协调组件)](https://zookeeper.apache.org)
 
 本文将介绍zookeeper伪集群的搭建。
 
