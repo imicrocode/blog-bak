@@ -53,6 +53,15 @@ git config --global user.email "your email"
 git config --global pull.rebase false
 # 查看全局配置
 git config --global --list
+# socks代理
+git config --global http.proxy 'socks5://127.0.0.1:7890'
+git config --global https.proxy 'socks5://127.0.0.1:7890'
+# http代理
+git config --global https.proxy 'http://127.0.0.1:7890'
+git config --global https.proxy 'https://127.0.0.1:7890'
+# 取消配置(例如取消代理配置)
+git config --global --unset http.proxy
+git config --global --unset https.proxy
 ```
 
 ### git clone
