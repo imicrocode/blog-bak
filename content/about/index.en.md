@@ -1,6 +1,8 @@
 ---
 title: "About Author"
 comment: false
+toc:
+  enable: false
 ---
 
 {{< image src="avatar_circle.png" title="About Author" height="100px" width="100px" linked=false >}}

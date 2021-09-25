@@ -1,6 +1,8 @@
 ---
 title: "关于博主"
 comment: false
+toc:
+  enable: false
 ---
 
 {{< image src="avatar_circle.png" title="关于博主" height="100px" width="100px" linked=false >}}
