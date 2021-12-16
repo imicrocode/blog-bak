@@ -14,4 +14,5 @@ $RECYCLE.BIN/
 public/
 resources/
 /exampleSite/resources/
+.hugo_build.lock
 
